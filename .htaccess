@@ -1,0 +1,17 @@
+    RewriteEngine On
+    # check to make sure the request is not for a real file
+    RewriteCond %{REQUEST_FILENAME} !-f
+    # check to make sure the request is not for a real directory
+    RewriteCond %{REQUEST_FILENAME} !-d
+    #route request to index.php
+    RewriteRule ^search/? /bebravk/search.php?id=$1 [QSA,L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    # check to make sure the request is not for a real directory
+    RewriteCond %{REQUEST_FILENAME} !-d
+    #route request to index.php
+    RewriteRule ^settings/? /bebravk/settings.php [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    # check to make sure the request is not for a real directory
+    RewriteCond %{REQUEST_FILENAME} !-d
+    #route request to index.php
+    RewriteRule ^([^/]+)/? /bebravk/index.php?id=$1 [QSA,L]
